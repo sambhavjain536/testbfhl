@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>testbfhl</title>
+</head>
+<body>
+<h2><a href="/">Welcome To Bajaj Finsrev</a></h2>
+<form action="/bfhl" method="post">
+  <label for="fname">FULL NAME with underscore:</label><br>
+  <input type="text" id="fname" name="name"  ><br><br>
+  <label for="dob">DOB</label><br>
+  <input type="date" id="dob" name="DOB" value="DD/MM/YYYY"><br><br>
+  <label for="lna">enter elements with space</label><br>
+  <input type="text" id="lna" name="array"><br><br>
+  <br>
+  <input type="submit" value="Submit">
+</form>   
+  <div class = "container">
+  {% if Status == "failure" %}
+   <h3 style="color: red"><b>Status: </b> {{ Status }}%</h3>
+   <h2><strong>Sorry! Your array cannot be processes</strong></h2>
+   <h2>Enter valid details!</h2>
+  {% elif Status == "sucess" %}
+   <h3  style="color: blue"><b>Status: </b> {{ Status }}</h3>
+   <h2><strong>Congratulations!</strong></h2>
+   <h2><b>Your details and processed array</b>
+   <h3><b>User_ID: </b> {{ User_id }}</h3>
+   <h3><b>Odd Number array: </b> {{ Odd }}</h3>
+   <h3><b>Even Numbe array: </b> {{ Even }}</h3>
+   <br>
+   <h2>Thank You!</h2>
+    {% endif %}
+</body>
+</html>
