@@ -1,7 +1,6 @@
-# -- coding: utf-8 --
+# -*- coding: utf-8 -*-
 """
 Created on Tue Aug  3 10:24:06 2021
-
 @author: admin
 """
 
@@ -9,7 +8,7 @@ from flask import Flask, render_template, request
 import re
 from datetime import datetime
 
-app = Flask(_name_)
+app = Flask(__name__)
 
 @app.route("/")
 def home():
@@ -55,5 +54,5 @@ def operate():
             return render_template("home.html", Status=status)
     return render_template("home.html")
             
-if _name_ == "_main_":
+if __name__ == "__main__":
     app.run(debug=True)
