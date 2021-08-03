@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*-
+# -- coding: utf-8 --
 """
 Created on Tue Aug  3 10:24:06 2021
 
@@ -9,7 +9,7 @@ from flask import Flask, render_template, request
 import re
 from datetime import datetime
 
-app = Flask(__name__)
+app = Flask(_name_)
 
 @app.route("/")
 def home():
@@ -27,7 +27,10 @@ def operate():
         arr = arr.split(" ")
         
         dob = dob.replace("-","")
-        
+        year = dob[:4]
+        month = dob[4:6]
+        day = dob[6:8]
+        dob = day+month+year
         user_id = str(name + "_" + dob)
         result=[]
         even=[]
@@ -52,5 +55,5 @@ def operate():
             return render_template("home.html", Status=status)
     return render_template("home.html")
             
-if __name__ == "__main__":
+if _name_ == "_main_":
     app.run(debug=True)
